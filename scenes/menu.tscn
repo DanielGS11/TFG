@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://cpym107aff8u"]
+
+[ext_resource type="Script" uid="uid://dvo3jtokj501n" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://dt18sx0uij1q6" path="res://assets/background/portrait/portrait_background.png" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bib4y7ojlgu1h" path="res://assets/title/title.png" id="1_yqeox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.7882353, 0.52156866, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8655976, 0.5192728, 1.347661e-06, 1)
+
+[node name="Menu" type="Control" unique_id=192301618]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 69.82666
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8972471, 0.97922605)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_con2f")
+
+[node name="Background" type="TextureRect" parent="." unique_id=964969105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1189.193, 387.04037)
+texture = ExtResource("1_vjb58")
+expand_mode = 1
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=2017130636]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin_Top" type="MarginContainer" parent="Layout" unique_id=218240718]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="Title" type="TextureRect" parent="Layout" unique_id=1924192791]
+custom_minimum_size = Vector2(416.578, 151.179)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_yqeox")
+expand_mode = 1
+
+[node name="Menu_Elements" type="ScrollContainer" parent="Layout" unique_id=34157907]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Elements" type="VBoxContainer" parent="Layout/Menu_Elements" unique_id=1458712082]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Player_Name_Text" type="Label" parent="Layout/Menu_Elements/Elements" unique_id=1430229208]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Nombre del personaje"
+
+[node name="Player_Name_Field" type="TextEdit" parent="Layout/Menu_Elements/Elements" unique_id=296264052]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+emoji_menu_enabled = false
+autowrap_mode = 2
+
+[node name="Enemies" type="Label" parent="Layout/Menu_Elements/Elements" unique_id=488820671]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Numero de enemigos"
+
+[node name="Enemies_Number_Selector" type="HBoxContainer" parent="Layout/Menu_Elements/Elements" unique_id=959337259]
+custom_minimum_size = Vector2(194, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Field_Background" type="PanelContainer" parent="Layout/Menu_Elements/Elements/Enemies_Number_Selector" unique_id=1544212092]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Layout/Menu_Elements/Elements/Enemies_Number_Selector/Field_Background" unique_id=1050815110]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Enemies_Number" type="Label" parent="Layout/Menu_Elements/Elements/Enemies_Number_Selector/Field_Background/MarginContainer" unique_id=1279818444]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Buttons" type="VBoxContainer" parent="Layout/Menu_Elements/Elements/Enemies_Number_Selector" unique_id=92040172]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Plus" type="Button" parent="Layout/Menu_Elements/Elements/Enemies_Number_Selector/Buttons" unique_id=795495823]
+custom_minimum_size = Vector2(40, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "+"
+
+[node name="Minus" type="Button" parent="Layout/Menu_Elements/Elements/Enemies_Number_Selector/Buttons" unique_id=1441372891]
+custom_minimum_size = Vector2(40, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Spacer" type="MarginContainer" parent="Layout/Menu_Elements/Elements" unique_id=2120440044]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Player_Class" type="GridContainer" parent="Layout/Menu_Elements/Elements" unique_id=1552269101]
+layout_mode = 2
+columns = 2
+
+[node name="Warrior" type="Button" parent="Layout/Menu_Elements/Elements/Player_Class" unique_id=173000580]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+toggle_mode = true
+text = "Guerrero"
+
+[node name="Mage" type="Button" parent="Layout/Menu_Elements/Elements/Player_Class" unique_id=1515065031]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+toggle_mode = true
+text = "Mago"
+
+[node name="Cleric" type="Button" parent="Layout/Menu_Elements/Elements/Player_Class" unique_id=1284942401]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+toggle_mode = true
+text = "Clerigo"
+
+[node name="Tank" type="Button" parent="Layout/Menu_Elements/Elements/Player_Class" unique_id=1979007195]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+toggle_mode = true
+text = "Tanque"
+
+[node name="Play" type="Button" parent="Layout" unique_id=120563576]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[node name="Margin_Bottom" type="MarginContainer" parent="Layout" unique_id=1963413069]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[connection signal="pressed" from="Layout/Menu_Elements/Elements/Enemies_Number_Selector/Buttons/Plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="Layout/Menu_Elements/Elements/Enemies_Number_Selector/Buttons/Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="Layout/Play" to="." method="_on_play_pressed"]
